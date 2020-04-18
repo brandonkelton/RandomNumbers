@@ -39,22 +39,22 @@ namespace RandomNumbers
 
         private static void RequestNumbers(bool isBuiltInAlgorithm = true)
         {
+            Console.Clear();
+
             while (true)
             {
                 Console.WriteLine();
-                Console.WriteLine();
 
-                Console.Write("Press Q to exit. Input nothing for auto-seed or input a seed: ");
-                var result = Console.ReadLine();
-                if (result.ToUpper() == "Q")
+                Console.Write("Input a seed (input nothing for auto-seed or Q to quit): ");
+                var seedString = Console.ReadLine();
+                if (seedString.ToUpper() == "Q")
                 {
                     break;
                 }
-
                 Console.WriteLine();
                 Console.WriteLine();
 
-                if (result.Trim() == "")
+                if (seedString.Trim() == "")
                 {
                     if (isBuiltInAlgorithm)
                     {
@@ -67,7 +67,7 @@ namespace RandomNumbers
                 else
                 {
                     int seed;
-                    if (int.TryParse(result, out seed))
+                    if (int.TryParse(seedString, out seed))
                     {
                         if (isBuiltInAlgorithm)
                         {
