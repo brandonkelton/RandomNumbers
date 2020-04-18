@@ -1,0 +1,13 @@
+D:\CS4050\RandomNumbers\RandomNumbers\RandomNumbers\bin\Debug\netcoreapp3.1\RandomNumbers.exe
+D:\CS4050\RandomNumbers\RandomNumbers\RandomNumbers\bin\Debug\netcoreapp3.1\RandomNumbers.deps.json
+D:\CS4050\RandomNumbers\RandomNumbers\RandomNumbers\bin\Debug\netcoreapp3.1\RandomNumbers.runtimeconfig.json
+D:\CS4050\RandomNumbers\RandomNumbers\RandomNumbers\bin\Debug\netcoreapp3.1\RandomNumbers.runtimeconfig.dev.json
+D:\CS4050\RandomNumbers\RandomNumbers\RandomNumbers\bin\Debug\netcoreapp3.1\RandomNumbers.dll
+D:\CS4050\RandomNumbers\RandomNumbers\RandomNumbers\bin\Debug\netcoreapp3.1\RandomNumbers.pdb
+D:\CS4050\RandomNumbers\RandomNumbers\RandomNumbers\obj\Debug\netcoreapp3.1\RandomNumbers.csprojAssemblyReference.cache
+D:\CS4050\RandomNumbers\RandomNumbers\RandomNumbers\obj\Debug\netcoreapp3.1\RandomNumbers.csproj.CoreCompileInputs.cache
+D:\CS4050\RandomNumbers\RandomNumbers\RandomNumbers\obj\Debug\netcoreapp3.1\RandomNumbers.AssemblyInfoInputs.cache
+D:\CS4050\RandomNumbers\RandomNumbers\RandomNumbers\obj\Debug\netcoreapp3.1\RandomNumbers.AssemblyInfo.cs
+D:\CS4050\RandomNumbers\RandomNumbers\RandomNumbers\obj\Debug\netcoreapp3.1\RandomNumbers.dll
+D:\CS4050\RandomNumbers\RandomNumbers\RandomNumbers\obj\Debug\netcoreapp3.1\RandomNumbers.pdb
+D:\CS4050\RandomNumbers\RandomNumbers\RandomNumbers\obj\Debug\netcoreapp3.1\RandomNumbers.genruntimeconfig.cache
