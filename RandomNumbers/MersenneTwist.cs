@@ -28,18 +28,18 @@ namespace RandomNumbers
 
         public MersenneTwist()
         {
-            InitializeGenerator((ulong)DateTime.Now.Ticks);
+            InitializeGenerator(Guid.NewGuid().GetHashCode());
         }
 
-        public MersenneTwist(ulong seed)
+        public MersenneTwist(int seed)
         {
             InitializeGenerator(seed);
         }
 
-        private void InitializeGenerator(ulong seed)
+        private void InitializeGenerator(int seed)
         {
             index = n_degreeOfRecurrence;
-            MT_GeneratorState[0] = seed;
+            MT_GeneratorState[0] = (ulong) seed;
             for (int i=1; i<(n_degreeOfRecurrence - 1); i++)
             {
                 MT_GeneratorState[i] = f_generatorParameter * (MT_GeneratorState[i-1] ^ (MT_GeneratorState[i-1] >> (w_wordSizeInBits-2))) + (ulong)i;

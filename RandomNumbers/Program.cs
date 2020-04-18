@@ -8,6 +8,39 @@ namespace RandomNumbers
         {
             while (true)
             {
+                Console.Clear();
+                Console.WriteLine();
+                Console.WriteLine("1) Generate Random Numbers with Mersenne Twist Algorithm");
+                Console.WriteLine("2) Generate Random Numbers with C#'s Subtractive Algorithm");
+                Console.WriteLine();
+                Console.WriteLine("--Press <ESCAPE> to Exit--");
+                Console.WriteLine();
+                Console.Write("Your Selection: ");
+                var result = Console.ReadKey();
+                if (result.Key == ConsoleKey.Escape)
+                {
+                    break;
+                }
+                switch (result.Key)
+                {
+                    case ConsoleKey.D1:
+                    case ConsoleKey.NumPad1:
+                        RequestNumbers(false);
+                        break;
+                    case ConsoleKey.D2:
+                    case ConsoleKey.NumPad2:
+                        RequestNumbers(true);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        private static void RequestNumbers(bool isBuiltInAlgorithm = true)
+        {
+            while (true)
+            {
                 Console.WriteLine();
                 Console.WriteLine();
 
@@ -23,15 +56,29 @@ namespace RandomNumbers
 
                 if (result.Trim() == "")
                 {
-                    Run();
-                } 
+                    if (isBuiltInAlgorithm)
+                    {
+                        RunBuiltInAlgorithm();
+                    } else
+                    {
+                        RunMercenneTwist();
+                    }
+                }
                 else
                 {
-                    ulong seed;
-                    if (ulong.TryParse(result, out seed))
+                    int seed;
+                    if (int.TryParse(result, out seed))
                     {
-                        Run(seed);
-                    } else
+                        if (isBuiltInAlgorithm)
+                        {
+                            RunBuiltInAlgorithm(seed);
+                        }
+                        else
+                        {
+                            RunMercenneTwist(seed);
+                        }
+                    }
+                    else
                     {
                         Console.WriteLine("Invalid Input!");
                     }
@@ -39,7 +86,7 @@ namespace RandomNumbers
             }
         }
 
-        private static void Run(ulong? seed = null)
+        private static void RunMercenneTwist(int? seed = null)
         {
             MersenneTwist generator;
             if (seed.HasValue)
@@ -49,6 +96,25 @@ namespace RandomNumbers
             else
             {
                 generator = new MersenneTwist();
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                var num = generator.Next();
+                Console.WriteLine(num);
+            }
+        }
+
+        private static void RunBuiltInAlgorithm(int? seed = null)
+        {
+            Random generator;
+            if (seed.HasValue)
+            {
+                generator = new Random(seed.Value);
+            }
+            else
+            {
+                generator = new Random();
             }
 
             for (int i = 0; i < 10; i++)
