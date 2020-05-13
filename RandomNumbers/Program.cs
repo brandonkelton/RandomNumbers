@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace RandomNumbers
 {
@@ -98,11 +99,15 @@ namespace RandomNumbers
                 generator = new MersenneTwist();
             }
 
-            for (int i = 0; i < 10; i++)
+            Console.WriteLine("Generating 1,000,000 Random Numbers...");
+            var numbers = new List<ulong>();
+            for (int i = 0; i < 1000000; i++)
             {
                 var num = generator.Next();
-                Console.WriteLine(num);
+                numbers.Add(num);
             }
+            var test = new DistributionTest(numbers.ToArray());
+            test.Run();
         }
 
         private static void RunBuiltInAlgorithm(int? seed = null)
@@ -117,11 +122,15 @@ namespace RandomNumbers
                 generator = new Random();
             }
 
-            for (int i = 0; i < 10; i++)
+            Console.WriteLine("Generating 1,000,000 Random Numbers...");
+            var numbers = new List<ulong>();
+            for (int i = 0; i < 1000000; i++)
             {
                 var num = generator.Next();
-                Console.WriteLine(num);
+                numbers.Add((ulong)num);
             }
+            var test = new DistributionTest(numbers.ToArray());
+            test.Run();
         }
     }
 }
